@@ -1,0 +1,59 @@
+version: 2
+
+jobs:
+  fmt:
+    docker:
+      - image: hashicorp/terraform:latest
+    steps:
+      - checkout
+      - run:
+          name: Check formating
+          command: terraform fmt --recursive -check=true
+
+  validate:
+    docker:
+      - image: hashicorp/terraform:latest
+    steps:
+      - checkout
+      - run: terraform init
+      - run:
+          name: Validate files
+          command: terraform validate
+
+  tflint:
+    docker:
+      - image: wata727/tflint
+    steps:
+      - checkout
+      - run:
+          name: TFLint
+          command: tflint
+
+
+  terratest:
+    docker:
+      - image: web3f/terratest:v0.1.0
+    steps:
+      - checkout
+      - run:
+          description: Integration tests
+          command: |
+            cd test
+            go test -v -timeout 45m
+
+workflows:
+  version: 2
+  test-module:
+    jobs:
+      - fmt
+      - tflint
+      - validate
+      - terratest:
+          requires:
+            - fmt
+            - tflint
+            - validate
+          filters:
+            branches:
+              only: /master/
+
