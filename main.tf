@@ -5,7 +5,7 @@ resource "digitalocean_kubernetes_cluster" "primary" {
   provider = digitalocean
 
   node_pool {
-    name       = "node-pool"
+    name       = "${var.cluster_name}-pool"
     size       = var.machine_type
     node_count = var.node_count
   }

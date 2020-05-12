@@ -48,12 +48,12 @@ workflows:
       - fmt
       - tflint
       - validate
-      # - terratest:
-      #     requires:
-      #       - fmt
-      #       - tflint
-      #       - validate
-      #     filters:
-      #       branches:
-      #         only: /master/
+      - terratest:
+          requires:
+            - fmt
+            - tflint
+            - validate
+          filters:
+            branches:
+              only: /master/
 
