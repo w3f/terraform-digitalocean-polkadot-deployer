@@ -32,7 +32,7 @@ jobs:
 
   terratest:
     docker:
-      - image: web3f/terratest:v0.1.0
+      - image: web3f/terratest:v0.2.0
     steps:
       - checkout
       - run:
