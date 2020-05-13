@@ -49,7 +49,7 @@ func createTerraformOptions(t *testing.T, terraformDir string) (*terraform.Optio
     // Set up expected values to be checked later
     clusterName := fmt.Sprintf("test-polkadot-%s", uniqueID)
     doToken := getEnv("DIGITALOCEAN_TOKEN", "")
-    nodeCount := 1
+    nodeCount := 2
 
     terraformOptions := &terraform.Options{
         TerraformDir: terraformDir,
@@ -57,6 +57,7 @@ func createTerraformOptions(t *testing.T, terraformDir string) (*terraform.Optio
             "cluster_name": clusterName,
             "do_token":     doToken,
             "location":     "lon1",
+            "machine_type": "s-1vcpu-2gb",
             "node_count":   nodeCount,
         },
         NoColor: true,
