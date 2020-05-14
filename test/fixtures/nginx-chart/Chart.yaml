@@ -1,0 +1,4 @@
+apiVersion: v1
+name: polkadot-nginx
+description: A minimal Helm chart to validate external service availability via NodePort
+version: 0.0.1

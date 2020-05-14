@@ -36,6 +36,12 @@ jobs:
     steps:
       - checkout
       - run:
+          description: Install dependencies
+          command: |
+            wget -O helm.tgz https://get.helm.sh/helm-v3.2.1-linux-amd64.tar.gz
+            tar -xvf helm.tgz
+            mv linux-amd64/helm /usr/local/bin/
+      - run:
           description: Integration tests
           command: |
             cd test
