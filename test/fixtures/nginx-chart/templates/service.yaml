@@ -13,10 +13,11 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "polkadot-nginx.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
-  type: NodePort
+  type: {{ .Values.service.type }}
   ports:
   - protocol: TCP
     targetPort: 80
-    port: 80
-    {{- $nodePort := required "nodePort is required" .Values.nodePort }}
-    nodePort: {{ $nodePort }}
+    port: {{ .Values.service.port }}
+    {{- if eq .Values.service.type "NodePort" }}
+    nodePort: {{ .Values.service.port }}
+    {{ end }}
