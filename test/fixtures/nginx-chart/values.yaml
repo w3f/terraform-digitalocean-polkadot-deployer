@@ -1,0 +1,7 @@
+image:
+  repo: nginx
+  tag: 1.18
+
+service:
+  type: NodePort
+  port: 30100
