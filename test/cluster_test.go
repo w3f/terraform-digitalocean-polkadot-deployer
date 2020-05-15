@@ -2,8 +2,11 @@ package test
 
 import (
     "testing"
+
+    "github.com/gruntwork-io/terratest/modules/random"
     "github.com/gruntwork-io/terratest/modules/test-structure"
-    test_polkadot "github.com/vladimir-babichev/terratest-polkadot-deployer"
+
+    test_polkadot "github.com/w3f/terratest-polkadot-deployer"
 )
 
 func TestTerraformClusterCreation(t *testing.T) {
@@ -46,4 +49,10 @@ func TestTerraformClusterCreation(t *testing.T) {
     test_structure.RunTestStage(t, "validate_plan", func() {
         test_polkadot.TestResourceChanges(t, terraformDir)
     })
+}
+
+func getRandomDigitalOceanRegion(t *testing.T) string {
+    doRegions := []string{"nyc1", "sfo2", "lon1", "fra1", "ams3"}
+    index := random.Random(0, len(doRegions)-1)
+    return doRegions[index]
 }

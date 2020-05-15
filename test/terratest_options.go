@@ -13,20 +13,21 @@ import (
 )
 
 func createTerraformOptions(t *testing.T, terraformDir string) {
-    nodeCount := 2
-    servicePort := 30100
-    uniqueID := strings.ToLower(random.UniqueId())
-    clusterName := fmt.Sprintf("test-polkadot-%s", uniqueID)
-
     doToken := os.Getenv("DIGITALOCEAN_TOKEN")
     require.NotEmpty(t, doToken, "DIGITALOCEAN_TOKEN variable is not set")
+
+    nodeCount := 2
+    servicePort := 30100
+    location := getRandomDigitalOceanRegion(t)
+    uniqueID := strings.ToLower(random.UniqueId())
+    clusterName := fmt.Sprintf("test-polkadot-%s", uniqueID)
 
     terraformOptions := &terraform.Options{
         TerraformDir: terraformDir,
         Vars: map[string]interface{} {
             "cluster_name": clusterName,
             "do_token":     doToken,
-            "location":     "lon1",
+            "location":     location,
             "machine_type": "s-1vcpu-2gb",
             "node_count":   nodeCount,
         },

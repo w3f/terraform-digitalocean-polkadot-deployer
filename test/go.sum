@@ -321,9 +321,9 @@ github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijb
 github.com/urfave/cli v1.22.1 h1:+mkCCcOFKPnCmVYVcURKps1Xe+3zP90gSYGNfRkjoIY=
 github.com/urfave/cli v1.22.1/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
 github.com/vdemeester/k8s-pkg-credentialprovider v0.0.0-20200107171650-7c61ffa44238/go.mod h1:JwQJCMWpUDqjZrB5jpw0f5VbN7U95zxFy1ZDpoEarGo=
-github.com/vladimir-babichev/terratest-polkadot-deployer v0.0.0-20200514000955-c9fbb12dbeb5 h1:ibtTnHfQi2ls2gPnLtSgTX5j7PAggjsTud7JofU3G9o=
-github.com/vladimir-babichev/terratest-polkadot-deployer v0.0.0-20200514000955-c9fbb12dbeb5/go.mod h1:MVfMkT/34WYAiy/ghIITbTeTUvVFuTPTbuik3GGt7JI=
 github.com/vmware/govmomi v0.20.3/go.mod h1:URlwyTFZX72RmxtxuaFL2Uj3fD1JTvZdx59bHWk6aFU=
+github.com/w3f/terratest-polkadot-deployer v0.3.0 h1:8/CIb/RMkkdrJs8vp18kqogG1RJt/9RnSmWomDbbq6M=
+github.com/w3f/terratest-polkadot-deployer v0.3.0/go.mod h1:AFQnU1AOXbbPiuTtrAJmdaUKaZiwUu/bAgxZQ481OfY=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
